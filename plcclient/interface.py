@@ -259,3 +259,7 @@ class Screen(Receiver):
 
     def cue(self, action, group):
         self.pads.list.refresh("cues")
+
+    def registry(self, type_, reg):
+        setattr(self.pads.list, type_, reg)
+        self.pads.list.refresh(type_)
